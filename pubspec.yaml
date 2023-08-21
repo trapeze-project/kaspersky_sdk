@@ -1,0 +1,32 @@
+name: kaspersky_sdk
+description: Flutter Plugin Package for the Kaspersky Mobile Security SDK for Android
+version: 0.0.1
+homepage: "https://www.kaspersky.com/mobile-security-sdk"
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.20.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  json_annotation: ^4.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+  json_serializable: ^6.0.1
+  build_runner: ^2.1.4
+
+flutter:
+  # This section identifies this Flutter project as a plugin project.
+  # The 'pluginClass' and Android 'package' identifiers should not ordinarily
+  # be modified. They are used by the tooling to maintain consistency when
+  # adding or updating assets for this project.
+  plugin:
+    platforms:
+      android:
+        package: de.berlin.tu.kaspersky_sdk
+        pluginClass: KasperskySdkPlugin
+        

@@ -1,0 +1,48 @@
+group 'de.berlin.tu.kaspersky_sdk'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.3'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        flatDir {
+            dirs project(':kaspersky_sdk').file('libs')
+            dirs 'libs'
+        }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 30
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 24
+    }
+}
+
+dependencies {
+    implementation (name: 'KL_Base_SDK_Android_5.13.0.136_Release', ext: 'aar')
+    implementation (name: 'KL_Mobile_SDK_Android_5.13.0.136_FullRelease', ext: 'aar')
+    implementation (name: 'KL_SimWatch_Android_5.13.0.136_Release', ext: 'aar')
+    implementation 'androidx.annotation:annotation:1.2.0'
+    implementation 'androidx.core:core:1.3.2'
+}
